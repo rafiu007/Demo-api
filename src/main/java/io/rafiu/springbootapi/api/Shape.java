@@ -68,12 +68,7 @@ public class Shape {
 	}
 
 	public void setResult(String result) {
-		if(type == "square" || type == "rectangle") {
-			this.setResult(Integer.toString(Integer.parseInt(length)*Integer.parseInt(breadth)));
-		}
-		else {
-			this.setResult(Double.toString(3.14*(Double.parseDouble(length)*Double.parseDouble(breadth))));
-		}
+		this.result=result;
 	}
 	
 	

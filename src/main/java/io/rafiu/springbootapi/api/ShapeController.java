@@ -26,6 +26,13 @@ public class ShapeController {
 	public void addShape(@RequestBody Shape []shape) {
 		
 		for (Shape s:shape) {
+			if(s.getType() == "square" || s.getType() == "rectangle") {
+				s.setResult(Integer.toString(Integer.parseInt(s.getLength())*Integer.parseInt(s.getBreadth())));
+			}
+			else {
+				s.setResult(Double.toString(3.14*(Double.parseDouble(s.getLength())*Double.parseDouble(s.getBreadth()))));
+			}
+			
 			shapeService.addShape(s);
 		}
 	}
